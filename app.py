@@ -4,9 +4,9 @@ import numpy as np
 
 # Load the preprocessor and model using pickle
 try:
-    with open('preprocessor.sav', 'rb') as f:
+    with open('Preprocessor.pkl', 'rb') as f:
         preprocessor = pickle.load(f)
-    with open('model.sav', 'rb') as f:
+    with open('Model.pkl', 'rb') as f:
         model = pickle.load(f)
 except FileNotFoundError:
     st.error("Preprocessor or model file not found.")

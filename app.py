@@ -27,6 +27,6 @@ if st.button('Predict'):
         processed_data = preprocessor.transform(feature)
         prediction = model.predict(processed_data)
 
-        st.success(f"Predicted Yield: {prediction[0]}")
+        st.success(f"Predicted Yield: {prediction[0]} HectoGram per Hectare")
     except Exception as e:
         st.error(f"An error occurred during prediction: {e}")

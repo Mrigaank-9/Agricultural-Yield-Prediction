@@ -15,6 +15,16 @@ except FileNotFoundError:
 
 st.title("Agricultural Yield Prediction")
 st.info("Note: The prediction may not be entirely accurate due to the complexity and variability of agricultural factors. Trained with data from 1990 to 2013 only.")
+
+# List of allowed crop names
+allowed_crops = [
+    'Maize', 'Potatoes', 'Rice, paddy', 'Sorghum', 'Soybeans', 'Wheat',
+    'Cassava', 'Sweet potatoes', 'Plantains and others', 'Yams'
+]
+
+# Display the allowed crop names
+st.subheader("Allowed Crop Names")
+st.write(", ".join(allowed_crops))
 st.header("Input Parameters")
 
 # Input fields
@@ -46,12 +56,3 @@ if st.button('Predict'):
         st.error(f"An error occurred during prediction: {e}")
 
 
-# List of allowed crop names
-allowed_crops = [
-    'Maize', 'Potatoes', 'Rice, paddy', 'Sorghum', 'Soybeans', 'Wheat',
-    'Cassava', 'Sweet potatoes', 'Plantains and others', 'Yams'
-]
-
-# Display the allowed crop names
-st.subheader("Allowed Crop Names")
-st.write(", ".join(allowed_crops))

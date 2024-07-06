@@ -17,20 +17,31 @@ st.title("Agricultural Yield Prediction")
 st.info("Note: The prediction may not be entirely accurate due to the complexity and variability of agricultural factors. Trained with data from 1990 to 2013 only.")
 st.header("Input Parameters")
 
+# List of allowed crop names
+allowed_crops = [
+    'Maize', 'Potatoes', 'Rice, paddy', 'Sorghum', 'Soybeans', 'Wheat',
+    'Cassava', 'Sweet potatoes', 'Plantains and others', 'Yams'
+]
+
+# Display the allowed crop names
+st.subheader("Allowed Crop Names:")
+st.write(", ".join(allowed_crops))
+
 # Input fields
 Year = st.number_input('Year', min_value=1900, max_value=2100, step=1)
 average_rain_fall_mm_per_year = st.number_input('Average Rainfall (mm/year)')
 pesticides_tonnes = st.number_input('Pesticides (tonnes)')
 avg_temp = st.number_input('Average Temperature (°C)')
 Area = st.text_input('Country')
-Item = st.text_input('Crop Name')
+
+# Dropdown for crop names
+Item = st.selectbox('Crop Name', allowed_crops)
 
 # Prediction button
 if st.button('Predict'):
     try:
-        # Capitalize the first letter of Area and Item
+        # Capitalize the first letter of Area
         Area = Area.capitalize()
-        Item = Item.capitalize()
 
         # Prepare the feature array
         feature = np.array([[Year, average_rain_fall_mm_per_year, pesticides_tonnes, avg_temp, Area, Item]])

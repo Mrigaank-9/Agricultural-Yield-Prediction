@@ -1,15 +1,3 @@
-import os
-import subprocess
-import sys
-
-# Function to install a package
-def install_package(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-# Install numpy and scikit-learn
-install_package('numpy')
-install_package('scikit-learn')
-
 import streamlit as st
 import pickle
 import numpy as np

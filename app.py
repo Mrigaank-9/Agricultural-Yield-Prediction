@@ -23,8 +23,6 @@ allowed_crops = [
 ]
 
 # Display the allowed crop names
-st.subheader("Allowed Crop Names")
-st.write(", ".join(allowed_crops))
 st.header("Input Parameters")
 
 # Input fields

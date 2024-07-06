@@ -17,16 +17,6 @@ st.title("Agricultural Yield Prediction")
 st.info("Note: The prediction may not be entirely accurate due to the complexity and variability of agricultural factors. Trained with data from 1990 to 2013 only.")
 st.header("Input Parameters")
 
-# List of allowed crop names
-allowed_crops = [
-    'Maize', 'Potatoes', 'Rice, paddy', 'Sorghum', 'Soybeans', 'Wheat',
-    'Cassava', 'Sweet potatoes', 'Plantains and others', 'Yams'
-]
-
-# Display the allowed crop names
-st.subheader("Allowed Crop Names")
-st.write(", ".join(allowed_crops))
-
 # Input fields
 Year = st.number_input('Year', min_value=1900, max_value=2100, step=1, help="Enter the year of prediction")
 average_rain_fall_mm_per_year = st.number_input('Average Rainfall (mm/year)', help="Enter the average annual rainfall in mm")
@@ -54,3 +44,14 @@ if st.button('Predict'):
         st.success(f"Predicted Yield: {prediction[0] / 10.0} Kilograms per Hectare")
     except Exception as e:
         st.error(f"An error occurred during prediction: {e}")
+
+
+# List of allowed crop names
+allowed_crops = [
+    'Maize', 'Potatoes', 'Rice, paddy', 'Sorghum', 'Soybeans', 'Wheat',
+    'Cassava', 'Sweet potatoes', 'Plantains and others', 'Yams'
+]
+
+# Display the allowed crop names
+st.subheader("Allowed Crop Names")
+st.write(", ".join(allowed_crops))

@@ -28,6 +28,10 @@ Item = st.text_input('Crop Name')
 # Prediction button
 if st.button('Predict'):
     try:
+        # Capitalize the first letter of Area and Item
+        Area = Area.capitalize()
+        Item = Item.capitalize()
+
         # Prepare the feature array
         feature = np.array([[Year, average_rain_fall_mm_per_year, pesticides_tonnes, avg_temp, Area, Item]])
         # Process the data using the preprocessor

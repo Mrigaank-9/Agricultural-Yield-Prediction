@@ -1,7 +1,12 @@
+import os
+
+# Ensure scikit-learn is installed
+os.system('pip install scikit-learn')
+
 import streamlit as st
 import pickle
 import numpy as np
-import sklearn 
+import sklearn
 
 # Load the preprocessor and model using pickle
 try:

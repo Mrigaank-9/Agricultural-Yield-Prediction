@@ -9,4 +9,4 @@ Steps to use :
 3. Enter year , Average Rainfall (mm/year) , Pesticides (tonnes) , Average Temperature (°C) , Country , Crop Name
 4. You will use predict button to print output in the screen
 
-MADE WITH LOVE BY MRIGAANK JASWAL 💓
+MADE WITH LOVE 💘
